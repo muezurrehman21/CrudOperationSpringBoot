@@ -80,8 +80,30 @@ public class BootjpaexampleApplication {
 //	itr.forEach(user->{System.out.println(user);});
 	
 //	Delete the user Element
-	userRepository.deleteById(3);
-	System.out.println("deleted");
+//	userRepository.deleteById(3);
+//	System.out.println("deleted");
+	
+//	by default from CrudRepository
+//	-----------------------------------------------------------------------------
+//	findAllbyId
+//	findById
+//	findAll
+//	now , we will use there Derived query method(custom method) 
+//	data by name
+//	data by name and password
+//	data by name or password
+//	data name starting with profix
+//	data by name like 'keyword'
+	
+//	so we are applying method
+//	for findByName
+//	List<User> users = userRepository.findByName("muez");
+//	users.forEach(e->{System.out.println(e);});
+	
+	List<User> users = userRepository.findByNameAndCity("muez","Islamabad");
+	users.forEach(e->{System.out.println(e);});
+	
+	
 	}
 
 }
